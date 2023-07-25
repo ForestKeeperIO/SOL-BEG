@@ -15,3 +15,4 @@ contract ViewAndPure {
         return i + j;
     }
 }
+ function mint  

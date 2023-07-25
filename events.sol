@@ -1,16 +1,24 @@
+
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.19;
 
-contract Event {
-    // Event declaration
-    // Up to 3 parameters can be indexed.
-    // Indexed parameters helps you filter the logs by the indexed parameter
-    event messLog(address indexed sender, string message);
-    event messLog2();
+// Import the Event contract from the same directory as this file
+import "./Event.sol";
 
-    function test() public {
-        emit messLog(msg.sender, "Hello World!");
-        emit messLog(msg.sender, "Hello EVM!");
-        emit messLog2();
-    }
+// Inherit the Event contract so we can use its functions
+contract EventCaller is Event {
+  // This function calls the logHelloWorld function in the Event contract
+  function logHelloWorld() public {
+    logHelloWorld();
+  }
+
+  // This function calls the logHelloEVM function in the Event contract
+  function logHelloEVM() public {
+    logHelloEVM();
+  }
+
+  // This function calls the logEmpty function in the Event contract
+  function logEmpty() public {
+    logEmpty();
+  }
 }
